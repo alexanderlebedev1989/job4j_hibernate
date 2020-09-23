@@ -1,12 +1,12 @@
-package ru.job4j_hibernate.cars;
+package ru.job4j_hibernate.one_to_many;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import ru.job4j_hibernate.cars.model.CarBrand;
-import ru.job4j_hibernate.cars.model.CarModel;
+import ru.job4j_hibernate.one_to_many.model.CarBrand;
+import ru.job4j_hibernate.one_to_many.model.CarModel;
 
 public class HbmRun {
     public static void main(String[] args) {

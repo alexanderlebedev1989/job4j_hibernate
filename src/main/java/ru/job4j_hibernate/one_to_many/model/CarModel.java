@@ -1,4 +1,4 @@
-package ru.job4j_hibernate.cars.model;
+package ru.job4j_hibernate.one_to_many.model;
 
 import javax.persistence.*;
 import java.util.Objects;
