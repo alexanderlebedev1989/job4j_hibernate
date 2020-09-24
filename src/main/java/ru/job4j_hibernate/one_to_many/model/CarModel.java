@@ -11,9 +11,14 @@ public class CarModel {
     private int id;
     private String name;
 
-    public static CarModel of(String name) {
+    @ManyToOne
+    @JoinColumn(name = "carBrand_id")
+    private CarBrand carBrand;
+
+    public static CarModel of(String name, CarBrand carBrand) {
         CarModel carModel = new CarModel();
         carModel.name = name;
+        carModel.carBrand = carBrand;
         return carModel;
     }
 
@@ -23,11 +28,21 @@ public class CarModel {
         if (o == null || getClass() != o.getClass()) return false;
         CarModel carModel = (CarModel) o;
         return id == carModel.id &&
-                Objects.equals(name, carModel.name);
+                Objects.equals(name, carModel.name) &&
+                Objects.equals(carBrand, carModel.carBrand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, name, carBrand);
+    }
+
+    @Override
+    public String toString() {
+        return "CarModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", carBrand=" + carBrand +
+                '}';
     }
 }
